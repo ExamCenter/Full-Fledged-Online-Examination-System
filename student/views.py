@@ -8,6 +8,7 @@ from django.conf import settings
 from datetime import date, timedelta
 from exam import models as QMODEL
 from teacher import models as TMODEL
+from student import models as SMODEL
 
 
 #for showing signup/login button for student
@@ -42,7 +43,7 @@ def is_student(user):
 @user_passes_test(is_student)
 def student_dashboard_view(request):
     dict={
-    
+    'profile_pic': request.user.student.profile_pic,
     'total_course':QMODEL.Course.objects.all().count(),
     'total_question':QMODEL.Question.objects.all().count(),
     }
