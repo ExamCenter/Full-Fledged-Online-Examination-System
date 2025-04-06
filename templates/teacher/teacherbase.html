@@ -176,7 +176,7 @@
   <div class="sidebar">
     <center>
 
-      <img src="{% static "image/teacher_icon.jfif" %}" class="profile_image" alt="">
+      {% comment %} <img src="{% static "image/teacher_icon.jfif" %}" class="profile_image" alt=""> {% endcomment %}
       <h4>{{request.user.first_name}}</h4>
       <h6 style="color: rgb(255, 255, 255);">( Teacher )</h6>
 

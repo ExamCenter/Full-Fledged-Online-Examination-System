@@ -4,7 +4,7 @@
 
 <style>
   .jumbotron {
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 
   #section-jumbotron {
@@ -13,7 +13,8 @@
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh;
-    position: relative; /* Needed for the overlay to position correctly */
+    width: 200vh;
+    position: fixed; /* Needed for the overlay to position correctly */
   }
 
   /* Semi-transparent overlay */
@@ -33,6 +34,44 @@
     z-index: 2; /* Ensures the text appears above the overlay */
     color: white; /* Makes the text white for better visibility */
   }
+
+  .custom-heading {
+    font-size: 4rem; 
+    font-family: sans-serif;
+    color: #ff7961; !important;
+    font-weight: bold;
+  }
+
+  .custom-btn {
+    text-decoration: none; /* Removes underline */
+    display: inline-block;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+}
+
+.custom-btn-lg {
+    font-size: 1.25rem; /* Adjusts the button text size */
+}
+
+.custom-btn-red {
+    background-color: #f44336; /* Makes the button red */
+    color: white; /* Ensures good contrast for readability */
+    border-radius: 5px; /* Optional: Rounded corners */
+    transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.custom-btn-red:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
+.custom-btn-red:active {
+    background-color: #b71c1c; /* Even darker red when clicked */
+}
+
+
 </style>
 
 <body>
@@ -40,12 +79,16 @@
   <br>
   <section id="section-jumbotron" class="jumbotron jumbotron-fluid d-flex justify-content-center align-items-center">
     <div class="container text-center">
-      <h2 class="display-3 text-info">Online Examination System</h2>
+      <h2 class="custom-heading">Amrit Campus Online Examination</h2>
       <p class="display-4 d-none d-sm-block">Attend your examinations online!</p>
       <p class="lead">Sign Up now to start your first online examination</p>
 
       <p><strong>Start Your Journey Here:</strong></p>
-      <a href="/student/studentsignup" class="btn btn-lg btn-info" style="padding-right: 35px; border-radius: 0%;"><i class="fa fa-graduation-cap" aria-hidden="true"></i> Sign Up as Student</a>
+      <a href="/student/studentsignup" class="custom-btn custom-btn-lg custom-btn-red">
+        <i class="fa fa-graduation-cap" aria-hidden="true"></i> Sign Up as Student
+    </a>
+    
+      
       <br><br><br>
     </div>
   </section>

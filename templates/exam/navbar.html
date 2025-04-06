@@ -16,14 +16,37 @@
 
     }
     .bg-dark {
-    background-color: #212529!important;
+    background-color:rgb(222, 148, 188)!important;
 }
     .navbar-brand {
       font-size: 20px;
       font-family: sans-serif;
 
     }
+
+    .custom-navbar {
+      display: flex;
+      justify-content: space-evenly; /* Evenly distributes the links */
+      width: 100%; /* Ensures full width */
+      background-color: #ff7961; /* Optional: Adds a background color */
+      padding: 2px 0; /* Adds padding for better spacing */
+  }
+  
+  .custom-nav-item {
+      flex-grow: 1; /* Makes all items take equal space */
+      text-align: center; /* Centers text inside each item */
+      color: white; /* Text color */
+      text-decoration: none; /* Removes underline */
+      font-size: 18px;
+      padding: 5px 10px;
+  }
+  
+  .custom-nav-item:hover {
+      background-color: #ba000d; /* Adds hover effect */
+  }
+  
   </style>
+
 </head>
 
 <body>
@@ -31,8 +54,7 @@
 
 
   <div class="bs-example">
-    <nav class="navbar navbar-expand-md  navbar-dark fixed-top" style="background-color: #212529;">
-    <a style="color: #ffffff;text-decoration: none; " href="/"><font face = "verdana" size =" 5">Online Examination</font><br /></a>  
+    <nav class="navbar navbar-expand-md  navbar-dark fixed-top" style="background-color: #ff7961">
       <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -42,14 +64,14 @@
     
         </div>
 
-        <div class="navbar-nav">
-          <a style="padding-left: 30px;" href="/" class="nav-item nav-link"> Home</a>
-          <a href="/teacher/teacherclick" class="nav-item nav-link">Teacher</a>
-          <a href="/student/studentclick" class="nav-item nav-link">Student</a>
-          <a href="/adminclick" class="nav-item nav-link">Admin</a>
-          <a href="/contactus" class="nav-item nav-link">Contact</a>
-          
+        <div class="custom-navbar">
+          <a href="/" class="custom-nav-item">Home</a>
+          <a href="/teacher/teacherclick" class="custom-nav-item">Teacher</a>
+          <a href="/student/studentclick" class="custom-nav-item">Student</a>
+          <a href="/adminclick" class="custom-nav-item">Admin</a>
+          <a href="/contactus" class="custom-nav-item">Contact</a>
         </div>
+        
 
 
 

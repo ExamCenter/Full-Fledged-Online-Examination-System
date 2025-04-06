@@ -5,37 +5,78 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  
+  <style>
+    /* Page Background */
+    body {
+      background-color:rgba(248, 249, 250, 0.75); /* Light gray background */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-  <style media="screen">
+    /* Jumbotron Styling */
     .jumbotron {
-      margin-top: 0px;
-      margin-bottom: 0px;
-    }
-
-    .jumbotron h1 {
+      background-color: #ff7961; 
+      color: #ba000d;
+      padding: 50px 20px;
       text-align: center;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 700px;
+      margin: 50px auto;
     }
 
-  </style>
+    /* Buttons */
+    .custom-btn {
+      display: inline-block;
+      font-size: 18px;
+      padding: 12px 25px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: all 0.3s ease-in-out;
+    }
 
+    .btn-primary {
+      background-color: #ff6600; /* Orange for Signup */
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background-color: #e65100; /* Darker orange for hover */
+    }
+
+    .btn-success {
+      background-color: #ba000d; /* Red for Login */
+      color: white;
+    }
+
+    .btn-success:hover {
+      background-color: #ff7961; /* Lighter red for hover */
+    }
+  </style>
 </head>
 
 <body>
 
   {% include "exam/navbar.html" %}
   <br><br>
-  <div class="jumbotron" style="margin-bottom:0px;">
-    <h1 class="display-4">Hello Teacher,</h1>
-    <p class="lead">and Welcome to Online Examination System</p>
-    <hr class="my-4">
-    <p>Select any of them to access into the system</p>
-    <p class="lead">
-      <a class="btn btn-primary" style="border-radius:0px;" href="teachersignup" role="button">Create Your Account</a>
-      <a class="btn btn-success" style="border-radius:0px;" href="teacherlogin" role="button">Login Now</a>
-    </p>
-    <br><br><br><br>
-  </div>
-  {% include "exam/footer.html" %}
-</body>
 
+  <div class="jumbotron">
+    <h1 class="display-4">AMRIT CAMPUS</h1>
+    <p class="lead">Online Examination System.</p>
+    <hr class="my-4">
+    <p>Choose an option below to get started:</p>
+    <p class="lead">
+      <a class="custom-btn btn-primary" href="teachersignup" role="button">Create Your Account</a>
+      <a class="custom-btn btn-success" href="teacherlogin" role="button">Login Now</a>
+    </p>
+  </div>
+
+  {% include "exam/footer.html" %}
+
+</body>
 </html>

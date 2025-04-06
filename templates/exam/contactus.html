@@ -4,10 +4,89 @@
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style>
+    /* Page Background */
+    body {
+      background-color:rgba(245, 245, 245, 0.74) !important;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
 
+    /* Alert Box */
+    .custom-alert {
+      background-color: #f44336; /* Red background */
+      color: white; /* White text */
+      padding: 10px;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: bold;
+      width: 100%;
+    }
 
+    /* Submit Button */
+    .custom-submit-btn {
+      background-color: #ba000d; /* Green color */
+      color: white; /* White text */
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
 
+    .custom-submit-btn:hover {
+      background-color:rgb(228, 27, 27); /* Darker green on hover */
+    }
 
+    /* Style the form container */
+.form-group {
+    width: 50%;
+    text-align: left;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Style input fields */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f9f9f9;
+}
+
+/* Style input focus */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    background-color: #fff;
+}
+
+/* Style textarea (Message Box) */
+textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+/* Center the form */
+.center-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+  </style>
 </head>
 
 <body>
@@ -16,17 +95,22 @@
   <br><br>
 
   <center>
-    <h3 class='alert alert-success'>Please fillup the form in order to contact us</h3>
-
-    <form method="POST" autocomplete="off">
-      <!-- Very Important csrf Token -->
+    <h3 class="custom-alert">Please fill up the form in order to contact us</h3>
+  
+    <form method="POST" autocomplete="off" class="center-form">
       {% csrf_token %}
       <div class="form-group">
-        <p>
-        <h3>{{ form.as_p }}</h3>
-        </p>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+  
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+  
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" placeholder="Enter your message" required></textarea>
+  
         <br>
-        <input type="submit" value="Submit" class='btn btn-primary' style="border-radius: 0%;">
+        <input type="submit" value="Submit" class="custom-submit-btn">
       </div>
     </form>
   </center>
